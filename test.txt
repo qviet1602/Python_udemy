@@ -1,0 +1,30 @@
+Section 4
+lecture 10: Python crash course 1
+print formatting: use {} and .format to format string and variable
+slicing for python works for: string, list, etc.
+list can take in any data type: list.append, nest list inside each other
+
+lecture 11: Python crash course 2
+dictionary: use {}, can havve dict or list inside a dictionary
+boolean
+tuple: use (), immutable
+set: use {} or set(), only unique element
+logical operator: and, or
+if, elif, else statement
+
+lecture 12: Python crash course 3
+for loop
+while loop
+list comprehension: [num**2 for num in x], replace for loop and append
+function: """ create a block of string, use shift+ tab to read document
+
+lecture 13: Python crash course 4
+map() function: map(par1, par2) with par1 is funtion and par2 is list
+lambda function: anonymous function
+example:
+lambda var:var*2
+
+filter()
+string manipulation: s. then use tab to show all available function
+in operator
+tuple unpacking: for a,b in x

@@ -28,3 +28,154 @@ filter()
 string manipulation: s. then use tab to show all available function
 in operator
 tuple unpacking: for a,b in x
+
+lecture 18: numpy array
+has one or two dimension
+1 bracket means 1 dimension
+np.arange(start,stop,step): similar to range function
+np.zeros((2,5)): 2 rows, 3 columns
+np.ones()
+np.linspace(start, stop, number of evenly spaces)
+np.eye: identity matrix (square matrix)
+np.random.rand()
+np.random.randn()
+np.random.randint(low, high, number of integer)
+.reshape
+.argmax, .argmin: find index of max and min values
+.shape
+.dtype
+
+lecture 20: numpy indexing and selection
+
+array can broadcast (list can't) to reduce memory: when you slice, just a view of original array
+=> use .copy() to avoid the broadcasting
+conditional selection: arr[arr > 5]
+
+lecture 21: numpy operations
+
+numpy has a lot of build in math function
+
+lecture 26: Panda series
+has index (arrays do not)
+pd.Series(data, index)
+pd.Series(dictionary)
+
+panda Series can hold a wide variety of data object in python
+use index to slice series
+
+lecture 27+28+29: Panda dataframe
+pd.DataFrame(data, index, column)
+
+select columns: df[['X', 'Y']]
+select rows: df.loc['index label'] OR df.iloc['numerical index']
+select subset of row and column: df.loc[ [], []]
+
+drop column: df.drop('column name', axis =1, inplace=True)
+drop row: df.drop('row index', axis=0)
+
+conditional selection: df[df['column name'] > 0]
+multiple condition selection: use &, | NOT and, or operator
+
+df.reset_index()
+df.set_index('column name')
+
+index hierachhy: df.xs(1, level = 'Num')
+
+
+Lecture 30: Missing data
+drop missing value: df.dropna(axis, thresh= number of na values)
+fill missing value: df.fillna(value = df.mean()]
+
+lecture 31: group by
+
+alllow you to group together rows based off a column and perform an aggregate function
+df.groupby('Column name').describe()
+
+lecture 32: merging, joining, and concatenating
+
+pd.concat: join the rows together as default, make sure the axes align
+pd.merge(left df, right df, how = inner, on=['key1',key2]): combine using column, need key like SQL join
+pd.join: combining the columns of dataframes with different indexes
+
+
+lecture 33: operations
+df.head()
+df.unique
+df.nunique: number of unique values
+df.value_counts(): count number of times that value appear in column
+df.apply(function you want OR lambda expression)
+df.columns or df.index : show index or column names
+df.sort_values(by= 'column name')
+df.isnull()
+df.pivot_table(values = '', index = [], columns =[])
+MORE ON pandas pivot table:
+https://towardsdatascience.com/a-step-by-step-guide-to-pandas-pivot-tables-e0641d0c6c70
+
+lecture 34: Data input and output
+csv, excel, html, sql
+
+pd.read_csv('example.csv')
+df.to_csv('my_output', index = False)
+
+pd.read_excel('Excel_file.xlsx', sheetname = 'Sheet1')
+df.to_excel()
+
+pd.read_html('web_link.html') => create a list of all available dataframe in html
+
+pd.read_sql('fielanme', con = engine)
+df.to_sql('filename', engine)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
